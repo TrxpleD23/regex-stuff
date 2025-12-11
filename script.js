@@ -2,7 +2,7 @@
 
 //Tasks
 //1.Mission
-const regex1 = /^\d+$/
+/*const regex1 = /^\d+$/
 
 console.log(regex1.test('15723415734'))
 console.log(regex1.test('61283ahvfagh6123'))
@@ -15,7 +15,7 @@ console.log(regex2.test("horvathdavid2534@gmail.com"))
 console.log(regex2.test("IloveLatinasSonic1212141312@freemail.hu"))
 */
 
-const regex2 = /^[\w-\.]+@[a-z0-9]+\.[a-z]+$/
+/*const regex2 = /^[\w-\.]+@[a-z0-9]+\.[a-z]+$/
 console.log(regex2.test("someone@test.hu"))
 console.log(regex2.test("thison_eisnotgood@gmail.com"))
 
@@ -51,3 +51,71 @@ const regex7 = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z0-9]{8,}$/
 
 console.log(regex7.test("ilovemidgets23412"))
 console.log(regex7.test("ilove3"))
+
+//8.Mission
+const regex8 = /[+-]?\d+(?:\.\d+)?/g
+text ='I know that pi is 3.14159'
+
+
+console.log(text.match(regex8))
+
+//9.Mission
+const regex9 = /#[a-zA-Z0-9_]+/g
+
+post = "#test #hello_world pipikaka broski"
+
+console.log(post.match(regex9))
+
+//10.Mission
+const regex10 = /\s+/g
+
+test = "    test     text    haha                  ni"
+
+console.log(test.replace(regex10, ' ').trim())*/
+
+console.log("First mission started")
+const regex = /@(.+)$/
+const email = "user@email.example.hu"
+console.log(email.match(regex))
+
+console.log("Second mission started")
+const regex2 = /(?:\+36\s\d{2}\s\d{3}\s\d{4}|06-\d{2}-\d{3}-\d{4})/g
+const text = `
+Hívj ezen: +36 30 123 4567 vagy itt: 06-70-123-4567.
+De lehet a másikon is: +36 20 987 6543.
+`;
+console.log(text.match(regex2))
+
+console.log("Third mission started")
+const regex3 = /\?$/
+console.log(regex3.test("Hogy vagy?"))
+console.log(regex3.test("Hogy vagys"))
+
+console.log("Fourth mission started")
+const regex4 = /<[^>]*>/g
+const text2 = "<p>Hello <b>world</b></p>"
+console.log(text2.replace(regex4, ""))
+
+console.log("Fifth mission")
+const regex5 = /[+-]?\d/g
+const text3 = "Van 3 almám és 12 körtém"
+
+console.log(text3.match(regex5))
+
+console.log("Sixth mission started")
+const regex6 = /^[a-z]+(?:[A-Z][a-z0-9]*)*$/
+console.log(regex6.test("userName"))
+console.log(regex6.test("User_name"))
+
+console.log("Seventh mission started")
+console.log("make this fucking big lalala".replace(/\b[a-z]/g, (match) => match.toUpperCase()))
+
+console.log("Eight mission started")
+const regex7 = /(.)\1+/g
+console.log(regex7.test("hello"))
+console.log(regex7.test("abc"))
+
+console.log("Ninth mission started")
+const regex8 = /tiltott/gi
+const text4 = "This is tiltott haha loser"
+console.log(text4.replace(regex8, "*******"))
