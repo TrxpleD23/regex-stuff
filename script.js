@@ -71,10 +71,10 @@ const regex10 = /\s+/g
 
 test = "    test     text    haha                  ni"
 
-console.log(test.replace(regex10, ' ').trim())*/
+console.log(test.replace(regex10, ' ').trim())
 
 console.log("First mission started")
-const regex = /@(.+)$/
+const regex = /^[^@]+@(.+)/
 const email = "user@email.example.hu"
 console.log(email.match(regex))
 
@@ -97,7 +97,7 @@ const text2 = "<p>Hello <b>world</b></p>"
 console.log(text2.replace(regex4, ""))
 
 console.log("Fifth mission")
-const regex5 = /[+-]?\d/g
+const regex5 = /\d+/g
 const text3 = "Van 3 almám és 12 körtém"
 
 console.log(text3.match(regex5))
@@ -105,7 +105,8 @@ console.log(text3.match(regex5))
 console.log("Sixth mission started")
 const regex6 = /^[a-z]+(?:[A-Z][a-z0-9]*)*$/
 console.log(regex6.test("userName"))
-console.log(regex6.test("User_name"))
+console.log(regex6.test("user_name"))
+console.log(regex6.test("UserName"))
 
 console.log("Seventh mission started")
 console.log("make this fucking big lalala".replace(/\b[a-z]/g, (match) => match.toUpperCase()))
@@ -118,4 +119,55 @@ console.log(regex7.test("abc"))
 console.log("Ninth mission started")
 const regex8 = /tiltott/gi
 const text4 = "This is tiltott haha loser"
-console.log(text4.replace(regex8, "*******"))
+console.log(text4.replace(regex8, "*******"))*/
+
+console.log("First mission start")
+const regex = /^([a-zA-Z][a-zA-Z\d+\-.]*):\/\//
+console.log("https://example.com".match(regex))
+
+console.log("Second mission start")
+const regex2 = /(?:\d{4}-\d{2}-\d{2}|\d{2}\/\d{2}\/\d{4})/
+console.log(regex2.test("2025-12-31"))
+console.log(regex2.test("31/12/2025"))
+
+console.log("Third mission start")
+const regex3 = /^[A-Z]/g
+console.log(regex3.test("Hello világ"))
+console.log(regex3.test("hello világ"))
+
+console.log("Fourth mission start")
+const regex4 = /\s+/g
+const text = "Ez    egy         mondat"
+
+console.log(text.replace(regex4, ' '))
+
+console.log("Fifth mission start")
+const regex5 = /\b[A-Z][a-z]+/g
+const text2 = "Budapest a Duna partján van"
+console.log(text2.match(regex5))
+
+console.log("Sixth mission start")
+const regex6 = /^[a-z]+(_[a-z]+)*$/
+console.log(regex6.test("user_name"))
+console.log(regex6.test("UserName"))
+
+console.log("Seventh mission start")
+const text3 = "2025-07-16";
+console.log(text3.replace(/^(\d{4})-(\d{2})-(\d{2})$/, "$3.$2.$1"))
+
+console.log("Eight mission start")
+const regex7 = /#[0-9a-fA-F]{6}/
+console.log(regex7.test("A háttér #12a4ff színű"))
+console.log(regex7.test("No color code"))
+
+console.log("Ninth mission start")
+const regex8 = /\bnem\b/g
+const text4 = "Ez nem jó mert blegh nem"
+const text5 = "This doesn't have the word"
+console.log(text4.replace(regex8, "igen"))
+console.log(text5.replace(regex8, "igen"))
+
+console.log("Tenth mission start")
+const regex9 = /\s\(.*?\)/g
+const text6 = "This is a sentence (random stuff) and one."
+console.log(text6.replace(regex9, ""))
